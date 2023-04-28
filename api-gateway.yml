@@ -33,3 +33,9 @@ spring:
             - Path=/api/task/**
           filters:
             - StripPrefix=2
+        - id: auth-service
+          uri: lb://auth-service
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=2
