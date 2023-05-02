@@ -20,7 +20,7 @@ spring:
           predicates:
             - Path=/api/project/**
           filters:
-            - StripPrefix=2
+            - AuthFilter
         - id: user-app
           uri: lb://user-app
           predicates:
@@ -33,7 +33,7 @@ spring:
           predicates:
             - Path=/api/task/**
           filters:
-            - StripPrefix=2
+            - AuthFilter
         - id: auth-service
           uri: lb://auth-service
           predicates:
