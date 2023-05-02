@@ -27,6 +27,7 @@ spring:
             - Path=/api/user/**
           filters:
             - StripPrefix=2
+            - AuthFilter
         - id: task-app
           uri: lb://task-app
           predicates:
